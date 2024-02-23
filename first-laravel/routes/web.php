@@ -50,6 +50,7 @@ Route::get('/dashboard', function () {
 })->name("dashboard");
 
 
+
 Route::name('services.')->group(function () {
     Route::get('/service1', function () {
        return view("service1");

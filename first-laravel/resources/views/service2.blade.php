@@ -45,7 +45,12 @@
         
         
         .navbar-nav .nav-link.home {
-            color: #fff; 
+    color: #fff; 
+    transition: color 0.3s; /* Add a smooth transition effect */
+        }
+
+        .navbar-nav .nav-link.home:hover {
+            color: #000; /* Change to black on hover */
         }
     </style>
   </head>
