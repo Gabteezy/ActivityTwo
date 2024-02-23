@@ -10,7 +10,7 @@
     <style>
         body {
             width: 100%;
-            background-image: url('banner19.png');
+            background-image: url('banner18.png');
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: 100% 100%;
