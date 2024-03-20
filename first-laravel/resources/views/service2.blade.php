@@ -42,6 +42,11 @@
             color: #fff; 
             margin-left: auto; 
         }
+        .navbar-login-icon i {
+          font-size: 30px;
+            weight: 30;
+            height: 30;
+        }
         
         
         .navbar-nav .nav-link.home {

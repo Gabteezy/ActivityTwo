@@ -160,6 +160,11 @@
             color: #fff; 
             margin-left: auto; 
         }
+        .navbar-login-icon i {
+          font-size: 30px;
+            weight: 30;
+            height: 30;
+        }
         
         .navbar-nav .nav-link.home {
     color: #fff; 
@@ -169,44 +174,64 @@
         .navbar-nav .nav-link.home:hover {
             color: #000; /* Change to black on hover */
         }
+        .center {
+            text-align: center;
+        }
+        .or {
+        color: #ffffff; /* Change color to white */
+        }
+        .google{
+        cursor: pointer;
+          height: 3.5rem;
+          padding: 0%;
+          color: white;
+          font-size: 1.5em;
+          letter-spacing: 0.3rem;
+          border: 2px solid white;
+        background: linear-gradient(144deg, #4285F4, #DB4437 50%, #F4B400, #0F9D58);
+       
+       
+        }
+
+        .google:hover {
+          background: linear-gradient(144deg, #4285F4, #DB4437 50%, #F4B400, #0F9D58);
+        }
+        .back {
+    background-color: #ccc; /* Background color */
+    color: #333; /* Text color */
+    border: none; /* Remove border */
+    padding: 5px calc(10px + 0.5em); /* Dynamic padding based on text width */
+    font-size: 16px; /* Initial font size */
+    border-radius: 5px; /* Border radius for rounded corners */
+    cursor: pointer; /* Cursor style */
+}
+
+.back:hover {
+    background-color: #ddd; /* Background color on hover */
+}
+
+
+
+
+
+
     </style>
   </head>
   <body class="p-3 m-0 border-0 bd-example m-0 border-0">
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="home">Second Activity Laravel</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-between" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a class="nav-link active home" aria-current="page" href="home">Home</a>
-            <a class="nav-link" href="about">About Us</a>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Services
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="service1">Services 1</a></li>
-                <li><a class="dropdown-item" href="service2">Services 2</a></li>
-                <li><a class="dropdown-item" href="service3">Services 3</a></li>
-              </ul>
-            </li>
-            <a class="nav-link" href="contact">Contact Us</a>
-          </div>
-          <a class="navbar-login-icon" href="login">
-            <i class="bi bi-person"></i>
-          </a>
-        </div>
-      </div>
-    </nav>
-    
     <div id="Container">
+      
       <form class="form" onsubmit="return validateForm()">
+        <button class="back" type="submit">Back</button>
         <div id="login-lable">Login</div>
         <input id="username" class="form-content" type="text" placeholder="UserName" />
         <input id="password" class="form-content" type="password" placeholder="PassWord" />
-        <button type="submit">Continue</button>
+        <button class="continue" type="submit">Continue</button>
+        <div class="center">
+          <small class="or">or</small>
+        </div>
+        <a class="google" href="{{ route('google-auth') }}">Login with Google</a>
+        
+        
       </form>
 
       <div id="rays">
@@ -215,8 +240,8 @@
       viewBox="0 0 299 152"
       height="9em"
       width="18em"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg">
+    
       <path
         fill="url(#paint0_linear_8_3)"
         d="M149.5 152H133.42L9.53674e-07 4.70132e-06H149.5L299 4.70132e-06L165.58 152H149.5Z"
@@ -466,26 +491,5 @@
     </svg>
       </div>
     </div>
-
-    <script>
-      function validateForm() {
-        var username = document.getElementById("username").value;
-        var password = document.getElementById("password").value;
-
-        var validUsername = "admin";
-        var validPassword = "admin";
-
-        if (username === validUsername && password === validPassword) {
-          // Successful login
-          alert("Login successful!");
-          window.location.href = "dashboard";
-          return false;
-        } else {
-          // Failed login
-          alert("Invalid username or password. Please try again.");
-          return false; 
-      }
-    }
-    </script>
   </body>
 </html>

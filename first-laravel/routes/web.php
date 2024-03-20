@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GoogleAuthController;
+use Illuminate\Http\Request;
+use Illuminate\Contracts\Http\Kernel;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -45,9 +50,18 @@ Route::get('/login', function () {
     return view('login');
 })->name("login");
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->name("dashboard");
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->name("dashboard");
+
+Route::group(['namespace' => 'App\Http\Controllers'], function () {
+    Route::get('/dashboard', 'DashboardController@index')->name('dashboard'); 
+    Route::get('google-auth', [GoogleAuthController::class, 'redirect'])->name('google-auth');
+    Route::get('auth/google/call-back', [GoogleAuthController::class, 'callbackGoogle'])->name('google-callback');
+
+});
+
+
 
 
 
